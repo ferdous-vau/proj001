@@ -57,7 +57,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{asset('public/frontend/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="{{asset('public/frontend')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -149,9 +149,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{route('welcome')}}" class="brand-link">
       <img src="{{asset('public/frontend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">LUPMS</span>
     </a>
 
     <!-- Sidebar -->
@@ -173,7 +173,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item ">
-            <a href="#" class="nav-link active">
+            <a href="{{route('welcome')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -184,7 +184,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Supervisors
                 <i class="fas fa-angle-left right"></i>
@@ -192,14 +192,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="add-supervisor" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Supervisor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="supervisor-list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Supervisor List</p>
                 </a>
@@ -209,7 +209,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-copy"></i>
               <p>
                 Proposals
                 <i class="fas fa-angle-left right"></i>
@@ -218,13 +218,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="third-proposal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Third Year</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="final-proposal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Final Year</p>
                 </a>
@@ -243,7 +243,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Students
                 <i class="fas fa-angle-left right"></i>
@@ -267,7 +267,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-calendar"></i>
               <p>
                 Schedule
                 <i class="fas fa-angle-left right"></i>

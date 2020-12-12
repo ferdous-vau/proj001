@@ -57,7 +57,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{asset('public/frontend/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="{{asset('public/frontend')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -149,9 +149,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{route('welcome')}}" class="brand-link">
       <img src="{{asset('public/frontend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">LUPMS</span>
     </a>
 
     <!-- Sidebar -->
@@ -183,8 +183,8 @@
             
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+            <a href="{{route('welcome')}}" class="nav-link active">
+              <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Supervisors
                 <i class="fas fa-angle-left right"></i>
@@ -209,7 +209,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-copy"></i>
               <p>
                 Proposals
                 <i class="fas fa-angle-left right"></i>
@@ -218,13 +218,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="third-proposal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Third Year</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="final-proposal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Final Year</p>
                 </a>
@@ -243,7 +243,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Students
                 <i class="fas fa-angle-left right"></i>
@@ -267,7 +267,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-calendar"></i>
               <p>
                 Schedule
                 <i class="fas fa-angle-left right"></i>
@@ -301,43 +301,7 @@
     <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <!-- left column -->
-            <div class="col-md-9 m-5 mx-auto">
-              <!-- general form elements -->
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">Add Supervisor</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form>
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="exampleInputText1">Supervisor Name</label>
-                      <input type="text" class="form-control" id="exampleInputText1" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputText1">Contact</label>
-                        <input type="tel" class="form-control" id="exampleInputNumber1" placeholder="Enter Number">
-                      </div>
-                  </div>
-                  <!-- /.card-body -->
-    
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.card -->
-    
               
-    
-            </div>
-            <!--/.col (left) -->
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->

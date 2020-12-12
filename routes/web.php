@@ -15,6 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 
 });
+
     Route::get('/add-supervisor', function () {
         return view('add-supervisor');
+});
+
+Route::get('/supervisor-list', function () {
+    return view('supervisor-list');
+});
+
+Route::get('/', 'AdminController@home')->name('welcome');
+
+Route::get('/third-proposal', function () {
+    return view('third-proposal');
+});
+
+Route::get('/final-proposal', function () {
+    return view('final-proposal');
 });
