@@ -192,7 +192,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{action('AdminController@add')}}" class="nav-link">
+                <a href="{{action('Admin\SupervisorController@add')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Supervisor</p>
                 </a>

@@ -14,7 +14,9 @@
 
 Route::get('/', 'AdminController@home');
 
-    Route::get('/add-supervisor', 'AdminController@add');
+    
+    
+
 
     Route::get('/supervisor-list', 'AdminController@list');
 
@@ -26,3 +28,9 @@ Route::get('/third-proposal', 'AdminController@third');
 
 
 Route::get('/final-proposal', 'AdminController@final');
+
+
+// super visor
+Route::get('/add-supervisor', 'Admin\SupervisorController@add');
+Route::post('/add-supervisor', 'Admin\SupervisorController@store');
+// super visor
