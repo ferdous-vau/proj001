@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 
 class SupervisorController extends Controller
 {
+    public function list(){
+        $supervisors = User::where('userType','Supervisor')->get();
+        return view ('supervisor-list',compact('supervisors'));
+    }
     public function add(){
         return view ('add-supervisor');
     }
@@ -16,6 +20,7 @@ class SupervisorController extends Controller
     $supervisor->name = $request->name;
     $supervisor->email = $request->email;
     $supervisor->password = Hash::make($request->password);
+    $supervisor->userType = 'Supervisor';
     $supervisor->save();
     return redirect()->back();
 }

@@ -18,7 +18,7 @@ Route::get('/', 'AdminController@home');
     
 
 
-    Route::get('/supervisor-list', 'AdminController@list');
+    
 
 
 Route::get('/', 'AdminController@home')->name('welcome');
@@ -31,6 +31,7 @@ Route::get('/final-proposal', 'AdminController@final');
 
 
 // super visor
+Route::get('/supervisor-list', 'Admin\SupervisorController@list');
 Route::get('/add-supervisor', 'Admin\SupervisorController@add');
 Route::post('/add-supervisor', 'Admin\SupervisorController@store');
 // super visor

@@ -199,7 +199,7 @@
               </li>
               
               <li class="nav-item">
-                <a href="{{action('AdminController@list')}}" class="nav-link">
+                <a href="{{action('Admin\SupervisorController@list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Supervisor List</p>
                 </a>
@@ -296,22 +296,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-              
-          </div>
-          <!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </section>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    
-    <!-- /.content -->
-  </div>
+  @yield('content')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

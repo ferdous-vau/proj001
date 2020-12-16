@@ -14,11 +14,12 @@ class AdminController extends Controller
         return view ('add-supervisor');
     }
 
-    public function list(){
-        return view ('supervisor-list');
-    }
+    // public function list(){
+     //    return view ('supervisor-list');
+     //}
 
     public function third(){
+
         return view ('third-proposal');
     }
 
