@@ -11,25 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
 
-});
+Route::get('/', 'AdminController@home');
 
-    Route::get('/add-supervisor', function () {
-        return view('add-supervisor');
-});
+    Route::get('/add-supervisor', 'AdminController@add');
 
-Route::get('/supervisor-list', function () {
-    return view('supervisor-list');
-});
+    Route::get('/supervisor-list', 'AdminController@list');
+
 
 Route::get('/', 'AdminController@home')->name('welcome');
 
-Route::get('/third-proposal', function () {
-    return view('third-proposal');
-});
 
-Route::get('/final-proposal', function () {
-    return view('final-proposal');
-});
+Route::get('/third-proposal', 'AdminController@third');
+
+
+Route::get('/final-proposal', 'AdminController@final');
