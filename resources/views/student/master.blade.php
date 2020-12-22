@@ -37,7 +37,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{action('AdminController@home')}}" class="nav-link">Home</a>
+        <a href="" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -146,7 +146,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{action('AdminController@home')}}" class="brand-link">
+    <a href="" class="brand-link">
       <img src="{{asset('public/frontend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">LUPMS</span>
     </a>
@@ -170,7 +170,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item ">
-            <a href="{{action('AdminController@home')}}" class="nav-link active">
+            <a href="" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -189,14 +189,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{action('Admin\SupervisorController@add')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Supervisor</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="{{action('Admin\SupervisorController@list')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Supervisor List</p>
                 </a>
@@ -215,13 +215,13 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{action('AdminController@third_project')}}" class="nav-link">
+                  <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Third Year</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{action('AdminController@final_project')}}" class="nav-link">
+                  <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Final Year</p>
                   </a>
@@ -248,13 +248,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{action('AdminController@third_student')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Third Year</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{action('AdminController@final_student')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Final Year</p>
                 </a>
@@ -272,13 +272,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{action('AdminController@third_schedule')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Third Year</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{action('AdminController@final_schedule')}}" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Final Year</p>
                 </a>

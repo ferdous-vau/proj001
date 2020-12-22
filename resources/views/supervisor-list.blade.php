@@ -28,10 +28,13 @@
                     <th style="width: 1%">
                         No.
                     </th>
-                    <th class="text-center" style="width: 40% ">
+                    <th  style="width: 35% ">
                         Supervisor Name
                     </th>
-                    <th class="text-right" style="width: 40%">
+                    <th  style="width: 35% ">
+                      Supervisor Email
+                  </th>
+                    <th class="text-right" style="width: 20%">
                       Action
                     </th>
                 </tr>
@@ -45,16 +48,19 @@
                     <td>
                         {{$i++}}
                     </td>
-                    <td class="text-center">
+                    <td >
                         {{$row->name}}
                     </td>
+                    <td >
+                      {{$row->email}}
+                  </td>
                     <td class="project-actions text-right">
-                      <a class="btn btn-info btn-sm" href="#">
+                      <a class="btn btn-info btn-sm" href="{{action('Admin\SupervisorController@edit',['id'=>$row->id])}}">
                         <i class="fas fa-edit">
                         </i>
                         Edit
-                      </a>
-                      <a class="btn btn-danger btn-sm" href="#">
+                       </a>
+                      <a class="btn btn-danger btn-sm" href="{{action('Admin\SupervisorController@delete',['id'=>$row->id])}}">
                         <i class="fas fa-trash">
                         </i>
                         Delete
