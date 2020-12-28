@@ -40,24 +40,29 @@
                   </tr>
               </thead>
               <tbody>
+                @php
+                  $i =1;
+                @endphp
+                  @foreach ($students as $row)
                   <tr>
-                      <td>
-                          1
-                      </td>
-                      <td >
-                          kkk
-                      </td>
-                      <td >
-                          mail
+                    <td>
+                      {{$i++}}
                     </td>
-                      <td class="project-actions text-right">
-                        <a class="btn btn-danger btn-sm" href="#">
-                          <i class="fas fa-trash">
-                          </i>
-                          Delete
-                         </a>
-                      </td>
-                  </tr>
+                    <td >
+                        {{$row->name}}
+                    </td>
+                    <td >
+                        {{$row->studentID}}
+                  </td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-danger btn-sm" href="{{action('Admin\StudentController@delete',['id'=>$row->id])}}">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                       </a>
+                    </td>
+                </tr>
+                  @endforeach
               </tbody>
           </table>
         </div>

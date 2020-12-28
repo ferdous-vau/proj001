@@ -9,12 +9,12 @@ use App\Http\Controllers\Controller;
 class SupervisorController extends Controller
 {
     public function add(){
-        return view ('add-supervisor');
+        return view ('admin.add-supervisor');
     }
     
     public function list(){
         $supervisors = User::where('userType','Supervisor')->get();
-        return view ('supervisor-list',compact('supervisors'));
+        return view ('admin.supervisor-list',compact('supervisors'));
     }
     
     // public function update_page(){
@@ -49,7 +49,7 @@ public function delete($id){
 //edit//
 public function edit($id){
     $supervisor=User::find($id);
-    return view('update-supervisor',compact('supervisor'));
+    return view('admin.update-supervisor',compact('supervisor'));
 }
 
 //edit//
@@ -73,7 +73,10 @@ public function update(Request $request)
 //update//
 
 
-
+public function super_dashboard()
+{
+    return view('supervisor.super-dashboard');
+}
 
 
 

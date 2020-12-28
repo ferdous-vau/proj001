@@ -10,33 +10,41 @@ class AdminController extends Controller
         return view ('welcome');
     }
 
+    public function dashboard(){
+        return view ('admin.dashboard');
+    }
+
+    public function super_dashboard(){
+        return view ('supervisor.super-dashboard');
+    }
+
     public function add(){
-        return view ('add-supervisor');
+        return view ('admin.add-supervisor');
     }
 
     public function third_project(){
 
-        return view ('third-year-project');
+        return view ('admin.third-year-project');
     }
 
     public function final_project(){
-        return view ('final-year-project');
+        return view ('admin.final-year-project');
     }
 
-    public function third_student(){
-        return view ('third-year-students');
-    }
+    
 
-    public function final_student(){
-        return view ('third-year-students');
-    }
+   
     public function third_schedule(){
-        return view ('third-year-schedule');
+        
+        return view ('admin.third-year-schedule');
     }
     public function final_schedule(){
-        return view ('final-year-schedule');
+        return view ('admin.final-year-schedule');
     }
     
+    public function error(){
+        return view ('error');
+    }
     
     
 }

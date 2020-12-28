@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -25,7 +25,18 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+   // protected $redirectTo = '/';
+
+   protected function authenticated()
+   {
+       if (Auth::user()->userType == 'Admin') {
+           return redirect('admin/dashboard');
+       }elseif(Auth::user()->userType == 'Supervisor'){
+           return redirect('supervisor/dashboard');
+       }else{
+        return redirect('/');
+       }
+   }
 
     /**
      * Create a new controller instance.
