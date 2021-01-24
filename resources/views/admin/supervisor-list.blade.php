@@ -21,7 +21,7 @@
           </button>
         </div>
       </div>
-      <div class="card-body p-0">
+      <div class="card-body p-0" style="overflow-x:auto;">
         <table class="table table-striped projects">
             <thead>
                 <tr>
@@ -55,15 +55,15 @@
                       {{$row->email}}
                   </td>
                     <td class="project-actions text-right">
-                      <a class="btn btn-info btn-sm" href="{{action('Admin\SupervisorController@edit',['id'=>$row->id])}}">
+                      <a class="btn btn-info btn-xs" href="{{action('Admin\SupervisorController@edit',['id'=>$row->id])}}">
                         <i class="fas fa-edit">
                         </i>
-                        Edit
+                        edit
                        </a>
-                      <a class="btn btn-danger btn-sm" href="{{action('Admin\SupervisorController@delete',['id'=>$row->id])}}">
+                      <a class="btn btn-danger btn-xs" href="{{action('Admin\SupervisorController@delete',['id'=>$row->id])}}">
                         <i class="fas fa-trash">
                         </i>
-                        Delete
+                        del
                        </a>
                     </td>
                 </tr>

@@ -8,12 +8,12 @@ use App\Http\Controllers\Controller;
 class StudentController extends Controller
 {
     public function third_student(){
-        $students = User::where('userType','Student')->where('years','Third Year')->get();
+        $students = User::where('userType','Student')->where('year','Third Year')->get();
         return view ('admin.third-year-students',compact('students'));
     }
 
     public function final_student(){
-        $students = User::where('userType','Student')->where('years','Final Year')->get();
+        $students = User::where('userType','Student')->where('year','Final Year')->get();
         return view ('admin.final-year-students',compact('students'));
     }
     //delete//
@@ -28,14 +28,5 @@ class StudentController extends Controller
     public function student()
     {
         return view('student.student-form');
-    }
-
-    public function student_01()
-    {
-        return view('student.student-form-01');
-    }
-    public function student_02()
-    {
-        return view('student.student-form-02');
     }
 }

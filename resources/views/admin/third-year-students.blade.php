@@ -21,7 +21,7 @@
             </button>
           </div>
         </div>
-        <div class="card-body p-0">
+        <div class="card-body p-0" style="overflow-x:auto;">
           <table class="table table-striped projects">
               <thead>
                   <tr>
@@ -55,7 +55,7 @@
                         {{$row->studentID}}
                   </td>
                     <td class="project-actions text-right">
-                      <a class="btn btn-danger btn-sm" href="{{action('Admin\StudentController@delete',['id'=>$row->id])}}">
+                      <a class="btn btn-danger btn-xs" href="{{action('Admin\StudentController@delete',['id'=>$row->id])}}">
                         <i class="fas fa-trash">
                         </i>
                         Delete

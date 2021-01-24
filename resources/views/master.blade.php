@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="{{asset('public/frontend')}}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('public/frontend')}}/plugins/summernote/summernote-bs4.min.css">
+  @yield('style')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -35,9 +36,6 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{action('AdminController@home')}}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -108,5 +106,6 @@
 <script src="{{asset('public/frontend')}}/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('public/frontend')}}/dist/js/pages/dashboard.js"></script>
+@yield('script')
 </body>
 </html>

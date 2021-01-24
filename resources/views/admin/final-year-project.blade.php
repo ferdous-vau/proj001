@@ -20,8 +20,10 @@
 
       <!-- Default box -->
       <div class="card">
+        <form action="{{action('Admin\Third_Year_propoalController@multipl_delete')}}" method="post">
+          @csrf
         <div class="card-header">
-          <h3 class="card-title">Final Year Projects</h3>
+          <h3 class="card-title"><button type="submit" class="btn btn-danger btn-sm">Delete All Selected</button></h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -32,10 +34,13 @@
             </button>
           </div>
         </div>
-        <div class="card-body p-0">
+        <div class="card-body p-0" style="overflow-x:auto;">
           <table class="table table-striped projects">
               <thead>
                   <tr>
+                      <th style="width: 1%">
+                        <input type="checkbox" name="proposal[]" id="checkAll">
+                      </th>
                       <th style="width: 1%">
                           No.
                       </th>
@@ -54,56 +59,65 @@
                   </tr>
               </thead>
               <tbody>
+                @php
+                    $i = 1;
+                @endphp
+                @foreach ($proposals as $row)
                   <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{asset('public/frontend')}}/dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{asset('public/frontend')}}/dist/img/avatar2.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{asset('public/frontend')}}/dist/img/avatar3.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{asset('public/frontend')}}/dist/img/avatar4.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
+                    <td>
+                      <input type="checkbox" name="proposal[]" id="checkItem" value="{{$row->id}}">
+                    </td>
+                    <td>
+                        {{$i++}}
+                    </td>
+                    <td>
+                        <a>
+                          {{$row->projectTitle}}
+                        </a>
+                    </td>
+                    <td>
+                      @foreach (json_decode($row->members) as $key => $item)
+                          <div class="group">
+                              <p style="
+                              margin: 0;
+                          "><b>Name:</b> {{$item->name}} &nbsp; <b>ID:</b>  {{$item->stdID}} </p>
+                          </div>
+                        @endforeach
+                        
+                    </td>
+                    <td class="project-state">
+                        <span class="badge badge-success">Success</span>
+                    </td>
+                    <td class="project-actions text-right">
+                        <a class="btn btn-primary btn-xs" href="{{action('Admin\Final_Year_propoalController@view_project',['id' => $row->id])}}">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                        </a>
+                        <a class="btn btn-danger btn-xs" href="#">
+                            <i class="fas fa-trash">
+                            </i>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
               </tbody>
           </table>
         </div>
         <!-- /.card-body -->
+        </form>
       </div>
       <!-- /.card -->
 
     </section>
     <!-- /.content -->
   </div>
+@endsection
+@section('script')
+<script language="javascript">
+  $("#checkAll").click(function () {
+    $('input:checkbox').not(this).prop('checked', this.checked);
+  });
+</script>
 @endsection

@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{action('AdminController@home')}}" class="brand-link">
+    <a href="{{action('AdminController@dashboard')}}" class="brand-link">
       <img src="{{asset('public/frontend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">LUPMS</span>
     </a>
@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item ">
-            <a href="{{action('AdminController@home')}}" class="nav-link active">
+            <a href="{{action('AdminController@dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -34,6 +34,7 @@
             
           </li>
           @if (Auth::user()->userType == 'Admin')
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user-friends"></i>
@@ -65,32 +66,21 @@
               <p>
                 Projects
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{action('AdminController@third_project')}}" class="nav-link">
+                  <a href="{{action('Admin\Third_Year_propoalController@third_project')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Third Year</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{action('AdminController@final_project')}}" class="nav-link">
+                  <a href="{{action('Admin\Final_Year_propoalController@final_project')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Final Year</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/charts/uplot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      Pending Projects
-                      <span class="badge badge-info right">6</span>
-                    </p>
-                  </a>
-                </li>
-                
               </ul>
           </li>
           <li class="nav-item">
@@ -119,117 +109,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-calendar"></i>
-              <p>
-                Schedule
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{action('AdminController@third_schedule')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Third Year</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{action('AdminController@final_schedule')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Final Year</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          @endif
-
-
-          @if (Auth::user()->userType == 'Supervisor')
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-friends"></i>
-              <p>
-                Supervisors
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{action('Admin\SupervisorController@add')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Supervisor</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="{{action('Admin\SupervisorController@list')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Supervisor List</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Projects
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{action('AdminController@third_project')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Third Year</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{action('AdminController@final_project')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Final Year</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/uplot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      Pending Projects
-                      <span class="badge badge-info right">6</span>
-                    </p>
-                  </a>
-                </li>
-                
-              </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Students
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{action('Admin\StudentController@third_student')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Third Year</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{action('Admin\StudentController@final_student')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Final Year</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-calendar"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Schedule
                 <i class="fas fa-angle-left right"></i>
