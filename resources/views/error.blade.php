@@ -36,7 +36,7 @@
 
           <p>
             We will work on fixing that right away.
-            Meanwhile, you may <a href="{{action('AdminController@home')}}">return to dashboard</a> or try using the search form.
+            Meanwhile, you may <a href="{{action('AdminController@dashboard')}}">return to dashboard</a> or try using the search form.
           </p>
         </div>
       </div>

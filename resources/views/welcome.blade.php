@@ -37,7 +37,7 @@
                                     <p><span class="fs-title text-danger">*Required</span></p>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1"><h5>Email address <span class="text-danger fs-title">*</span></h5></label>
-                                        <input type="email" required class="form-control" id="exampleInputEmail1" placeholder="Enter Email" name="email">
+                                        <input readonly type="email" value="{{Auth::user()->email}}" required class="form-control" id="exampleInputEmail1" placeholder="Enter Email" name="email">
                                     </div>
                                 </div> 
                                 <input type="button" name="next" class="next action-button" value="Next Step" />
@@ -55,11 +55,11 @@
                                     <div class="form-card">
                                         <h2 class="fs-title">Member<span class="ml-2 text-danger">*</span></h2>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Enter Member Name" name="studenName[]">
+                                            <input readonly type="text" class="form-control" value="{{Auth::user()->name}}"  placeholder="Enter Member Name" name="studenName[]">
                                         </div>
                                         <h2 class="fs-title">Student ID:<span class="ml-2 text-danger">*</span></h2>
                                         <div class="form-group">
-                                          <input type="text" class="form-control"  placeholder="Enter Student ID" name="studentID[]">
+                                          <input readonly type="text" value="{{Auth::user()->studentID}}" class="form-control"  placeholder="Enter Student ID" name="studentID[]">
                                         </div>
                                         <button type="button" class="btn btn-info btn-xs" id="add">ADD ANOTHER MEMBER</button>
                                     </div>    
@@ -76,13 +76,13 @@
                                       </div>
                                       <h5>Course Code:</h5>
                                       <div class="form-check ">
-                                        <input class="form-check-input mt-1" style="width: 20px" value="CSE-3300" type="radio" name="coursecode" id="flexRadioDefault2" checked>
+                                        <input class="form-check-input mt-1" style="width: 20px" value="CSE-3300" type="radio" name="coursecode" id="flexRadioDefault2" @if(Auth::user()->year == 'Third Year') checked @endif>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                           CSE-3300
                                         </label>
                                       </div>
                                       <div class="form-check ">
-                                          <input class="form-check-input mt-1" style="width: 20px" value="CSE-4800"  type="radio" name="coursecode" id="flexRadioDefault1">
+                                          <input class="form-check-input mt-1" style="width: 20px" value="CSE-4800"  type="radio" @if(Auth::user()->year == 'Final Year') checked @endif name="coursecode" id="flexRadioDefault1">
                                           <label class="form-check-label" for="flexRadioDefault1">
                                             CSE-4800
                                           </label>

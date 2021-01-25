@@ -13,7 +13,7 @@
           <img src="{{asset('public/frontend')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="{{action('Profile\ProfileController@profile')}}" class="d-block">Alexander Pierce</a>
         </div>
       </div>
 
@@ -107,7 +107,7 @@
               
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
@@ -129,9 +129,34 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li>-->
           @endif
 
+          @if (Auth::user()->userType == 'Supervisor')
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Projects
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{action('Supervisor\supervisorController@third_project')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Third Year</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{action('Supervisor\supervisorController@final_project')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Final Year</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          @endif
           @if (Auth::user()->userType == 'Student')
           
           @endif

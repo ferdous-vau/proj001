@@ -4,6 +4,7 @@
 
 Route::group(['middleware' => 'auth'],function(){
     Route::get('/', 'AdminController@dashboard');
+    Route::get('/profile', 'Profile\ProfileController@profile');
 
     Route::group(['middleware' => 'admin'],function(){
         
@@ -31,7 +32,10 @@ Route::group(['middleware' => 'auth'],function(){
 
     });
     Route::group(['middleware' => 'supervisor'],function(){
-        
+
+        Route::get('/supervisor-third-year-project', 'Supervisor\supervisorController@third_project');
+        Route::get('/supervisor-final-year-project', 'Supervisor\supervisorController@final_project');
+        Route::get('/supervisor-view-project/{id}', 'Supervisor\supervisorController@view_project');
 
     });
 

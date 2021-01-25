@@ -9,16 +9,17 @@ class ProposalController extends Controller
 {
     public function store(Request $request)
     {
+        //dd($request->all());
         $request->validate([
             'email' => 'required',
-            'mobileno' => 'required',
+            'mobileno' => 'required | unique:proposals',
             'studenName' => 'required',
             'studentID' => 'required',
             'projectTitle' => 'required',
             'coursecode' => 'required',
-            'file' => 'required',
+            'file' => 'required | mimes:pdf',
         ]);
-    //dd($request->all());
+    
         $members = [];
         $studentIDs = $request->studentID;
         foreach ($request->studenName as $key => $name){

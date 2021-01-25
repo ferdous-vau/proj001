@@ -44,7 +44,7 @@
                                     <p><span class="fs-title text-danger">*Required</span></p>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1"><h5>Email address <span class="text-danger fs-title">*</span></h5></label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email" name="email">
+                                        <input type="email" value="{{Auth::user()->email}}" class="form-control" id="exampleInputEmail1" placeholder="Enter Email" name="email">
                                     </div>
                                 </div> 
                                 <input type="button" name="next" class="next action-button" value="Next Step" />
@@ -62,11 +62,11 @@
                                     <div class="form-card">
                                         <h2 class="fs-title">Member<span class="ml-2 text-danger">*</span></h2>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Enter Member Name" name="studenName[]">
+                                            <input type="text" value="{{Auth::user()->name}}" class="form-control"  placeholder="Enter Member Name" name="studenName[]">
                                         </div>
                                         <h2 class="fs-title">Student ID:<span class="ml-2 text-danger">*</span></h2>
                                         <div class="form-group">
-                                          <input type="text" class="form-control"  placeholder="Enter Student ID" name="studentID[]">
+                                          <input type="text" class="form-control" value="{{Auth::user()->studentID}}" placeholder="Enter Student ID" name="studentID[]">
                                         </div>
                                         <button type="button" class="btn btn-info btn-xs" id="add">ADD ANOTHER MEMBER</button>
                                     </div>    

@@ -37,7 +37,7 @@
             <div class="row">
               <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
                 <div class="row">
-                  <div class="col-12 col-sm-4">
+                  <div class="col-12 col-sm-6">
                     <div class="info-box bg-light">
                       <div class="info-box-content">
                         <span class="info-box-text text-center text-muted"><h4 class="mb-0">Supervisor &nbsp; <i class="fas fa-user-tie">
@@ -57,7 +57,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-sm-4">
+                  <div class="col-12 col-sm-6">
                     <div class="info-box bg-light">
                         <div class="info-box-content">
                             <span class="info-box-text text-center text-muted"><h4 class="mb-0">Schedule &nbsp; <i class="fas fa-calendar-alt">
@@ -74,20 +74,6 @@
                                 </i>
                                 Assign
                                </button>
-                          </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-4">
-                    <div class="info-box bg-light">
-                        <div class="info-box-content">
-                            <span class="info-box-text text-center text-muted"><h4 class="mb-0">Status &nbsp; <i class="fas fa-cog">
-                            </i></h4></span>
-                            <span class="info-box-number text-center text-muted mb-1"><span class="badge badge-success">Success</span></span>
-                             <a class="btn btn-info btn-xs" href="#">
-                                <i class="fas fa-cog mr-2">
-                                </i>
-                                Update Status
-                               </a>
                           </div>
                     </div>
                   </div>
