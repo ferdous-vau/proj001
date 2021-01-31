@@ -13,7 +13,7 @@
           <img src="{{asset('public/frontend')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{action('Profile\ProfileController@profile')}}" class="d-block">Alexander Pierce</a>
+          <a href="{{action('Profile\ProfileController@profile')}}" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 

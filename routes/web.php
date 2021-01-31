@@ -5,6 +5,7 @@
 Route::group(['middleware' => 'auth'],function(){
     Route::get('/', 'AdminController@dashboard');
     Route::get('/profile', 'Profile\ProfileController@profile');
+    Route::post('/profile/update', 'Profile\ProfileController@profile_update');
 
     Route::group(['middleware' => 'admin'],function(){
         
