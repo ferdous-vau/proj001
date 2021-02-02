@@ -71,11 +71,14 @@
                   </p>
                   <hr>
                   <strong><i class="fas fa-users mr-1"></i> Members</strong>
-                   <ol> 
+                  @if ($members != null)
+                      <ol> 
                      @foreach (json_decode($members->members) as $key => $item)
                        <li>{{$item->name}} - {{$item->stdID}}</li>
                     @endforeach
                   </ol>
+                  @endif 
+                  
                   @else
                   <strong><i class="fas fa-user mr-1"></i> Designation</strong>
     

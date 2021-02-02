@@ -15,6 +15,7 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users',function($t){
             $t->string('year',15)->nullable();
+            $t->string('image',160)->default('default.jpg');
         });
     }
 
