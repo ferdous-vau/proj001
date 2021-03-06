@@ -106,9 +106,6 @@
                     <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> {{$proposal->file}}</a>
                   </li>
                 </ul>
-                <div class="text-center mt-5 mb-3">
-                  <a href="" class="btn btn-sm btn-primary float-left"><i class="fas fa-undo-alt"></i>Back</a>
-                </div>
               </div>
             </div>
           </div>

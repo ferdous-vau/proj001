@@ -35,7 +35,7 @@ class ProposalController extends Controller
         $proposal->projectTitle = $request->projectTitle;
         $proposal->coursecode = $request->coursecode;
         $proposal->studentID = Auth::user()->id;
-        $proposal->year = 'Final Year';
+        $proposal->year = Auth::user()->year;
         if($request->hasFile('file')){
             $extension = $request->file->extension();
             $fileName = str_slug($request->projectTitle,'_');

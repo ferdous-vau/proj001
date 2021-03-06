@@ -82,7 +82,7 @@
                                         </label>
                                       </div>
                                       <div class="form-check ">
-                                          <input class="form-check-input mt-1" style="width: 20px" value="CSE-4800"  type="radio" @if(Auth::user()->year == 'Final Year') checked @endif name="coursecode" id="flexRadioDefault1">
+                                          <input class="form-check-input mt-1" style="width: 20px" value="CSE-4800"  type="radio" name="coursecode" id="flexRadioDefault1" @if(Auth::user()->year == 'Final Year') checked @endif >
                                           <label class="form-check-label" for="flexRadioDefault1">
                                             CSE-4800
                                           </label>
