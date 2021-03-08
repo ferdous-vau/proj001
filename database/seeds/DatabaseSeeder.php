@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\SwitchBtn;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(SwitchBtn::class, 1)->create();
     }
 }

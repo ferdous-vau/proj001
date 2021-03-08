@@ -107,6 +107,22 @@
               
             </ul>
           </li>
+          @php
+              $btn = App\SwitchBtn::all();
+              if (count($btn) > 0) {
+                $check = App\SwitchBtn::first();
+              }
+          @endphp
+          @if (count($btn) > 0)
+          <li class="nav-item">
+            <a @if($check->formSwitch == 'OFF') onclick="return confirm('Want to on the form?')" @else onclick="return confirm('Want to off the form?')" @endif href="@if($check->formSwitch == 'OFF') {{action('Admin\SwitchController@on',$check->id)}} @else {{action('Admin\SwitchController@off',$check->id)}} @endif" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Form [{{$check->formSwitch == 'OFF' ? 'ON' : 'OFF'}}]
+              </p>
+            </a>
+          </li>
+          @endif
           <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>

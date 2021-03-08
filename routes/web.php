@@ -8,6 +8,9 @@ Route::group(['middleware' => 'auth'],function(){
     Route::post('/profile/update', 'Profile\ProfileController@profile_update');
 
     Route::group(['middleware' => 'admin'],function(){
+
+        Route::get('switch-on/{id}','Admin\SwitchController@on');
+        Route::get('switch-off/{id}','Admin\SwitchController@off');
         
     Route::get('/third-year-project', 'Admin\Third_Year_propoalController@third_project');
     Route::post('/third-year-project/multiple/delete', 'Admin\Third_Year_propoalController@multipl_delete');
