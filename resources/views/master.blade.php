@@ -41,12 +41,6 @@
 
           <!-- Right navbar links -->
           <ul class="navbar-nav ml-auto">
-            <li>
-              <div class="custom-control custom-switch mt-2">
-                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1"></label>
-              </div>
-            </li>
             <!-- Messages  -->
             <li class="nav-item">
               <a class="nav-link"  href="#" role="button">

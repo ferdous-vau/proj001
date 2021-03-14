@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{action('AdminController@dashboard')}}" class="brand-link">
-      <img src="{{asset('public/frontend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('public/frontend')}}/dist/img/lupms.jpg"  class="brand-image  elevation-3" style="opacity: 1; border-radius:5px">
       <span class="brand-text font-weight-light">LUPMS</span>
     </a>
 
@@ -10,10 +10,24 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('public/frontend')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          @if (Auth::user()->image == 'default.jpg')
+                        <img class="profile-user-img img-fluid img-circle"
+                         src="{{asset('public/frontend')}}/dist/img/user2-160x160.jpg"
+                         alt="User profile picture">
+                    @else
+                    <img style="
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    border: 1px solid grey;
+                    padding: 2px;
+                " class="img-fluid"
+                         src="{{asset('public/uploads/image/'.Auth::user()->image)}}"
+                         alt="User profile picture">
+                    @endif
         </div>
         <div class="info">
-          <a href="{{action('Profile\ProfileController@profile')}}" class="d-block">{{Auth::user()->name}}</a>
+          <a href="{{action('Profile\ProfileController@profile')}}" class="d-block mt-1" style="font-size: 18px">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -116,7 +130,7 @@
           @if (count($btn) > 0)
           <li class="nav-item">
             <a @if($check->formSwitch == 'OFF') onclick="return confirm('Want to on the form?')" @else onclick="return confirm('Want to off the form?')" @endif href="@if($check->formSwitch == 'OFF') {{action('Admin\SwitchController@on',$check->id)}} @else {{action('Admin\SwitchController@off',$check->id)}} @endif" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-power-off"></i>
               <p>
                 Form [{{$check->formSwitch == 'OFF' ? 'ON' : 'OFF'}}]
               </p>
@@ -180,10 +194,8 @@
             <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();" class="nav-link text-danger">
-              <i class="nav-icon fa fa-power-off"></i>
-              <p>
-                Logout
-              </p>
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p style="font-size: 18px"><b>Logout</b></p>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
